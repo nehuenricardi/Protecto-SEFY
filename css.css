@@ -1,0 +1,125 @@
+:root {
+  --bg: #0f172a;
+  --surface: #111827;
+  --surface-2: #1e293b;
+  --surface-3: #334155;
+  --text: #f1f5f9;
+  --muted: #9ca3af;
+  --primary-start: #1d3979;
+  --primary-end: #5d1e8a;
+  --accent: #38bdf8;
+  --success: #22c55e;
+  --primary: #3b82f6;
+  --secondary: #64748b;
+  --border: #1f2a44;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg-logo {
+  background: url("imagenes/logo.png") no-repeat center center;
+  background-size: 70%; /* ajustá tamaño del logo */
+  opacity: 0.08;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  animation: fadeInDown 1s ease-in-out;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #eef2ff;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Botones */
+.btn {
+  border-radius: 30px !important;
+  font-weight: bold !important;
+  transition: transform .2s ease;
+}
+.btn:hover { transform: scale(1.05); }
+.btn-info {
+  background: #06b6d4 !important;
+  border-color: #06b6d4 !important;
+  color: #fff !important;
+}
+.btn-info:hover { background: #0891b2 !important; }
+
+/* Secciones */
+.section-title { font-size: 2.2rem; color: #fff; font-weight: 800; }
+.section-subtitle { color: var(--muted); font-size: 1.1rem; }
+
+/* Features */
+.feature-card {
+  background: var(--surface-2);
+  border-radius: 15px;
+  padding: 24px;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, background .25s ease;
+}
+.feature-card h5 { color: var(--accent); font-weight: bold; }
+.feature-card:hover { transform: translateY(-6px); background: var(--surface-3); }
+
+/* Testimonios */
+.testimonial {
+  background: var(--surface-2);
+  border-radius: 15px;
+  padding: 20px;
+  font-style: italic;
+  box-shadow: var(--shadow);
+}
+
+/* FAQ */
+.accordion-button { background: var(--surface-2); color: var(--text); font-weight: bold; }
+.accordion-body { background: var(--bg); color: #d1d5db; }
+
+/* CTA */
+.cta { background: linear-gradient(135deg, var(--primary-start), var(--primary-end)); color: #fff; }
+
+/* Contacto */
+.contact-form .form-control {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+}
+.contact-form .form-control::placeholder { color: var(--muted); }
+
+/* Footer */
+.footer {
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--surface-2);
+  margin-top: 40px;
+}
+
+/* Animaciones */
+@keyframes fadeInDown { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeInUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
